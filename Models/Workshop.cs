@@ -1,8 +1,10 @@
-﻿using System;
-
-public class Class1
+﻿namespace DesafioEstagio.Models
 {
-	public Class1()
-	{
-	}
+    public class Workshop
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; } = string.Empty;
+        public DateTime DataRealizacao { get; set; }
+        public string Descricao { get; set; } = string.Empty;
+    }
 }

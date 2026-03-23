@@ -1,8 +1,8 @@
-﻿using System;
-
-public class Class1
+﻿namespace DesafioEstagio.Models
 {
-	public Class1()
-	{
-	}
+    public class Colaborador
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; } = string.Empty;
+    }
 }
