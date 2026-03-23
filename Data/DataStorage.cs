@@ -4,12 +4,17 @@ namespace DesafioEstagio.Data
 {
     public static class DataStorage
     {
-        // Listas que vão guardar os dados enquanto a API estiver rodando
-        public static List<Colaborador> Colaboradores { get; set; } = new List<Colaborador>();
+        // Já iniciamos a lista com 2 colaboradores cadastrados!
+        public static List<Colaborador> Colaboradores { get; set; } = new List<Colaborador>
+        {
+            new Colaborador { Id = 1, Nome = "Felipe (Futuro Estagiário)" },
+            new Colaborador { Id = 2, Nome = "João da Silva" }
+        };
+
         public static List<Workshop> Workshops { get; set; } = new List<Workshop>();
 
-        // Contadores para simular o ID automático do banco de dados
-        public static int ProximoIdColaborador = 1;
+        // Como já usamos o 1 e o 2, o próximo será o 3
+        public static int ProximoIdColaborador = 3;
         public static int ProximoIdWorkshop = 1;
     }
 }
