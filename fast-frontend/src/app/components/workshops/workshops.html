@@ -1,1 +1,15 @@
-<p>workshops works!</p>
+<h3>Workshops Trimestrais</h3>
+<p>Clique no nome do workshop para ver os detalhes e participantes.</p>
+
+<div style="display: flex; gap: 15px; flex-wrap: wrap;">
+  @for (ws of listaWorkshops; track ws.id) {
+  <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; width: 250px;">
+
+    <a [routerLink]="['/workshops', ws.id]" style="font-size: 18px; font-weight: bold; color: #0056b3; cursor: pointer;">
+      {{ ws.nome }}
+    </a>
+
+    <p style="color: #666; font-size: 14px;">Data: {{ ws.dataRealizacao | date:'dd/MM/yyyy' }}</p>
+  </div>
+  }
+</div>

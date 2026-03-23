@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router'; // 1. Importamos o RouterLink
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [RouterOutlet, RouterLink], // 2. Avisamos o Angular para usar ele aqui
+  templateUrl: './app.html'
 })
 export class App {
-  protected readonly title = signal('fast-frontend');
+  title = 'fast-frontend';
 }

@@ -1,1 +1,24 @@
-<p>workshop-detalhe works!</p>
+<button routerLink="/workshops" style="margin-bottom: 20px; padding: 5px 10px; cursor: pointer;">
+  ⬅ Voltar para Workshops
+</button>
+
+@if (workshopAtual) {
+<div style="border: 1px solid #0056b3; padding: 20px; border-radius: 8px; background-color: #f9f9f9;">
+  <h2 style="color: #0056b3; margin-top: 0;">{{ workshopAtual.nome }}</h2>
+  <p><strong>Data:</strong> {{ workshopAtual.dataRealizacao | date:'dd/MM/yyyy HH:mm' }}</p>
+  <p><strong>Descrição:</strong> {{ workshopAtual.descricao }}</p>
+
+  <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px 0;">
+
+  <h3>Colaboradores Presentes (Atas):</h3>
+  <ul>
+    @for (colab of workshopAtual.colaboradores; track colab.id) {
+    <li>{{ colab.nome }}</li>
+    } @empty {
+    <li style="color: red;">Nenhum colaborador registrado neste workshop.</li>
+    }
+  </ul>
+</div>
+} @else {
+<h3 style="color: red;">Workshop não encontrado!</h3>
+}

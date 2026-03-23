@@ -1,1 +1,9 @@
-<p>colaboradores works!</p>
+<h3>Lista de Colaboradores</h3>
+
+<ul>
+  @for (colab of listaColaboradores; track colab.id) {
+  <li style="margin-bottom: 10px;">
+    <strong>#{{ colab.id }}</strong> - {{ colab.nome }}
+  </li>
+  }
+</ul>
